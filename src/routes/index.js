@@ -9,5 +9,7 @@ const Router = express.Router();
 // });
 
 Router.use('/register', registerRoutes);
-
+Router.use((req, res) => {
+  return res.send(`404 NOT FOUND`);
+});
 export const APIs = Router;
