@@ -8,4 +8,7 @@ export const env = {
 
   MONGODB_URI: process.env.MONGODB_URI,
   DB_NAME: process.env.DB_NAME,
+
+  JWT_KEY: process.env.JWT_KEY,
+  JWT_EXPIRES: process.env.JWT_EXPIRES,
 };

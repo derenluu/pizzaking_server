@@ -1,4 +1,4 @@
-// Updated by youtuber: trungquandev.com
+// License by trungquandev.com
 
 import { StatusCodes } from 'http-status-codes';
 import { WHITELIST_DOMAINS } from '~/utils/constants';
@@ -20,10 +20,7 @@ export const corsOptions = {
 
     // Cuối cùng nếu domain không được chấp nhận thì trả về lỗi
     return callback(
-      new ApiError(
-        StatusCodes.FORBIDDEN,
-        `${origin} not allowed by our CORS Policy.`
-      )
+      new ApiError(StatusCodes.FORBIDDEN, `${origin} not allowed by our CORS Policy.`)
     );
   },
 

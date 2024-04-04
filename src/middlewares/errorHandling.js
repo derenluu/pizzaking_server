@@ -1,4 +1,4 @@
-// Updated by youtuber: trungquandev.com
+// License by trungquandev.com
 
 import { StatusCodes } from 'http-status-codes';
 
