@@ -1,8 +1,16 @@
+import { StatusCodes } from 'http-status-codes';
+import { registerModel } from '~/models/registerModel';
+import { hashData, decryptData } from '~/utils/bcrypt';
+
 export const registerService = async (reqBody) => {
   try {
-    console.log(`>>> log by service: `, reqBody);
-    // console.log(req.body);
+    const password = reqBody.password;
+    const validPassword = await hashData(password);
+    reqBody.password = validPassword;
+
+    const createdUser = await registerModel.createUser(reqBody);
+    return createdUser;
   } catch (error) {
-    console.log(error);
+    throw error;
   }
 };

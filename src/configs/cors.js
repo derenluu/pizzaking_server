@@ -1,10 +1,10 @@
 // License by trungquandev.com
 
 import { StatusCodes } from 'http-status-codes';
-import ApiError from '~/utils/ApiError';
 import { WHITELIST_DOMAINS } from '~/utils/constants';
+import ApiError from '~/utils/ApiError';
 
-// Cấu hình CORS Option trong dự án thực tế
+// // Cấu hình CORS Option trong dự án thực tế
 export const corsOptions = {
   origin: function (origin, callback) {
     // Cho phép việc gọi API bằng POSTMAN trên môi trường dev,
@@ -23,6 +23,18 @@ export const corsOptions = {
       new ApiError(StatusCodes.FORBIDDEN, `${origin} not allowed by our CORS Policy.`)
     );
   },
+
+  // Các phương thức được cho phép
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+
+  // Các header được cho phép
+  // allowedHeaders: ['Content-Type', 'Authorization'],
+
+  // Các header có thể được expose
+  // exposedHeaders: ['Authorization'],
+
+  // Thời gian cho phép cache
+  // maxAge: 86400, // 1 ngày
 
   // Some legacy browsers (IE11, various SmartTVs) choke on 204
   optionsSuccessStatus: 200,
