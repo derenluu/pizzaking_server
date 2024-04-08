@@ -1,8 +1,8 @@
 // License by trungquandev.com
 
 import { StatusCodes } from 'http-status-codes';
-import { WHITELIST_DOMAINS } from '~/utils/constants';
 import ApiError from '~/utils/ApiError';
+import { WHITELIST_DOMAINS } from '~/utils/constants';
 
 // Cấu hình CORS Option trong dự án thực tế
 export const corsOptions = {

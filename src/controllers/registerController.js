@@ -1,12 +1,13 @@
 import { StatusCodes } from 'http-status-codes';
+import { registerService } from '~/services/registerService';
 
-const createNew = async (req, res, next) => {
+export const registerController = async (req, res, next) => {
   try {
-    // res.send(json(req.body));
-    console.log(req.body);
-  } catch (error) {}
-};
-
-export const registerController = {
-  createNew,
+    // console.log(req.body);
+    const result = await registerService(req.body);
+    // res.status(StatusCodes.CREATED).json(result);
+    // next();
+  } catch (error) {
+    // next(error);
+  }
 };

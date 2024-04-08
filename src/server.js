@@ -5,7 +5,7 @@ import exitHook from 'async-exit-hook';
 import { env } from '~/configs/environment';
 import { APIs } from '~/routes';
 import { corsOptions } from '~/configs/cors';
-import { createJWT } from './middlewares/jwtAction';
+// import { createJWT } from './middlewares/jwtAction';
 import { CONNECT_DB, GET_DB, CLOSE_DB } from '~/configs/mongodb';
 
 const START_SERVER = () => {
